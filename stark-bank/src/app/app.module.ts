@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     HeaderComponent,
     CustomerDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    BankuserloginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,14 @@ import { HomeComponent } from './home/home.component';
       },{
         path:'customer/:id',
         component:CustomerDetailsComponent
+      },
+      {
+        path:'login',
+        component:LoginComponent
+      },
+      {
+        path:'bankuserlogin',
+        component:BankuserloginComponent
       }
     ])
   ],
