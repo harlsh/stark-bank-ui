@@ -17,7 +17,7 @@ export class CustomerListComponent implements OnInit {
   findById(id):Customer{customer return this.customerService.findByCustomerId(id);
   }
   */
-    attributes=["id","name","Accept/Reject"];
+    attributes=["ID","NAME","Accept/Reject"];
     customers=[{
         id:1,
         name:"a"

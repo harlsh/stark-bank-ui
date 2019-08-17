@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../Customer';
 
 @Component({
   selector: 'app-customer-details',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
+  customer:Customer[]=[];
+  //attr:Customerattributes[]=[];
+/*  constructor(private customerService:CustomerService) { }
 
-  constructor() { }
-
+  }*/
   ngOnInit() {
+    //this.customer=this.customerService.findByCustomerId(id);
   }
 
 }
