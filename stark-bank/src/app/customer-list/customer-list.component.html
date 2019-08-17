@@ -9,10 +9,10 @@
  
     <tr  *ngFor="let customer of customers">
     <td >
-             <h4>{{customer.id}} </h4>
+        <a [routerLink]="['/customer',customer.id]" routerLinkActive="router-link-active"> <h4>{{customer.id}} </h4> </a>
     </td>
     <td>
-             <h4> {{customer.name}}</h4>
+            <h4> {{customer.name}}</h4> 
     </td>
     <td>
              <button type="button" class="btn btn-success" (click)="AcceptFun" name="acceptButton">Accept</button>

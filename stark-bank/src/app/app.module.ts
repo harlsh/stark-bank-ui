@@ -10,6 +10,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,19 @@ import { HeaderComponent } from './header/header.component';
     BankUserComponent,
     CustomerListComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CustomerDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
-      
+      {
+        path:'',
+        component:HomeComponent
+      },
       {
         path:'bankUser',
         component:BankUserComponent
@@ -35,6 +42,9 @@ import { HeaderComponent } from './header/header.component';
       },{
         path:'register',
         component:RegisterComponent
+      },{
+        path:'customer/:id',
+        component:CustomerDetailsComponent
       }
     ])
   ],
