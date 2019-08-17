@@ -36,6 +36,10 @@ import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component'
     FormsModule,
     RouterModule.forRoot([
       {
+        path:'',
+        component:HomeComponent
+      },
+      {
         path:'home',
         component:HomeComponent
       },
