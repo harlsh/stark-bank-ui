@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     CustomerDetailsComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    BankuserloginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     RouterModule.forRoot([
       {
-        path:'',
+        path:'home',
         component:HomeComponent
       },
       {
@@ -47,6 +52,14 @@ import { FooterComponent } from './footer/footer.component';
       },{
         path:'customer/:id',
         component:CustomerDetailsComponent
+      },
+      {
+        path:'login',
+        component:LoginComponent
+      },
+      {
+        path:'bankuserlogin',
+        component:BankuserloginComponent
       }
     ])
   ],
