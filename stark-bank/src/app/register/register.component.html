@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">Customer Registration Form</div>
+    <div class="card-body">
+      <div class="col-lg-12 well">
+        <div class="row">
+          <form ngForm #form="ngForm" (ngSubmit)="handleFormData(form)">
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="Enter First Name Here.." class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Enter Last Name Here.." class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label>House Number</label>
+                  <input type="text" placeholder="Enter House Number Here.." class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label>Street</label>
+                  <input type="text" placeholder="Enter Street Here.." class="form-control">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <label>City</label>
+                  <input type="text" placeholder="Enter City Name Here.." class="form-control">
+                </div>
+                <div class="col-sm-4 form-group">
+                  <label>State</label>
+                  <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                </div>
+                <div class="col-sm-4 form-group">
+                  <label>Zip</label>
+                  <input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label>Date of Birth</label>
+                  <input type="text" placeholder="Enter dob in YYYY/MM/DD format" class="form-control">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label>National Id</label>
+                  <input type="text" placeholder="Enter National Id Here.." class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+              </div>
+              <div class="form-group">
+                <label>User Name</label>
+                <input type="text" placeholder="Enter User Name Here.." class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="text" placeholder="Enter Password Here.." class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="text" placeholder="Enter Password Again.." class="form-control">
+              </div>
+
+              <button type="button" class="btn btn-primary">Create Account</button>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          Already have an account?<a href="#">Login</a>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="#">Forgot your password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
