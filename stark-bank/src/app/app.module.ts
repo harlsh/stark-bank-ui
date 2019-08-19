@@ -40,6 +40,10 @@ import { AccountsComponent } from './accounts/accounts.component';
     FormsModule,
     RouterModule.forRoot([
       {
+        path:'',
+        component:HomeComponent
+      },
+      {
         path:'home',
         component:HomeComponent
       },

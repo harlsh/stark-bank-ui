@@ -1,9 +1,11 @@
-.footer {
-    position: fixed;
-    left: 0;
+  .footer {
+    position: absolute;
     bottom: 0;
     width: 100%;
-    background-color:  lime;
-    color: white;
-    text-align: center;
+    max-height: 20px;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+     line-height: 60px;
+     color: rgb(8, 250, 8);
+     text-align: center;
   }
