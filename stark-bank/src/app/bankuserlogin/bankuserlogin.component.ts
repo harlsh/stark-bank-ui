@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-bankuserlogin',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankuserloginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  router:Router) { }
+  muFunc(form){
+    console.log('sdfdsfdsf')
+    //this.router.navigate(['/customers-details']);
+  }
 
   ngOnInit() {
   }
