@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  
+
   /* customers:Customer[]=[];
   constructor(private customerService:CustomerService) { }
 
@@ -17,18 +17,28 @@ export class CustomerListComponent implements OnInit {
   findById(id):Customer{customer return this.customerService.findByCustomerId(id);
   }
   */
-    attributes=["ID","NAME","Accept/Reject"];
+    attributes=["ID","FIRSTNAME","LASTNAME","DATEOFBIRTH","NATIONALID","Accept/Reject"];
     customers=[{
-        id:1,
-        name:"a"
+      id:1,
+      firstName: "Rachana",
+        lastName:"Kavukuntla",
+      dateOfBirth:"2/9/0984",
+      nationalId:23456
+
     },
     {
-        id:2,
-        name:"b"
+      id:2,
+      firstName: "Sandhya",
+      lastName:"Lingamalla",
+      dateOfBirth:"2/9/0984",
+      nationalId:"23456"
     },
     {
-        id:3,
-        name:"c"
+      id:3,
+      firstName: "Krishna",
+      lastName:"Murthy",
+      dateOfBirth:"2/9/0984",
+      nationalId:"23456"
     }]
   constructor() { }
 

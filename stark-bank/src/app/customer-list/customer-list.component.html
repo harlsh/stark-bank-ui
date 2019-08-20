@@ -1,24 +1,24 @@
+<div class="row">
+<div class="card col-md-4" *ngFor="let customer of customers" >
+  <div class="card-header">
 
-<table class="table table-striped table-hover" align="center" >
-  <thead class="thead-dark">
-        <tr>
-          <th *ngFor="let attr of attributes">  <b>{{attr}}</b> </th>
-        </tr>
-  </thead>
-  <tbody>
- 
-    <tr  *ngFor="let customer of customers">
-    <td >
-        <a [routerLink]="['/customer',customer.id]" routerLinkActive="router-link-active"> <h4>{{customer.id}} </h4> </a>
-    </td>
-    <td>
-            <h4> {{customer.name}}</h4> 
-    </td>
-    <td>
-             <button type="button" class="btn btn-success" (click)="AcceptFun" name="acceptButton">Accept</button>
-             <button type="button" class="btn btn-danger"  (click)="RejectFun" name="rejectButton">Reject</button>
-    </td>
-  </tr>
-</tbody>
-</table>
+    <a [routerLink]="['customer-dashboard/customer']" routerLinkActive="router-link-active"> <h4>{{customer.firstName+" "+customer.lastName}} </h4> </a>
+<!--    {{customer.firstName+customer.lastName}}-->
+</div>
+<div class="card-body">
+
+<p class="card-text">Name: {{customer.firstName}}</p>
+
+
+<p class="card-text">Date of Birth: {{customer.dateOfBirth}}</p>
+
+<p class="card-text" >National ID: {{customer.nationalId}}</p>
+
+</div>
+<div class="card-footer">
+  <button type="button" class="btn btn-success " (click)="AcceptFun" name="acceptButton">Accept</button>
+  <button type="button" class="btn btn-danger"  (click)="RejectFun" name="rejectButton" >Reject</button>
+</div>
+</div>
+</div>
 

@@ -10,9 +10,8 @@ import { Router } from "@angular/router";
 export class BankuserloginComponent implements OnInit {
 
   constructor(private  router:Router) { }
-  muFunc(form){
-    console.log('sdfdsfdsf')
-    //this.router.navigate(['/customers-details']);
+  myFunc(form){
+    this.router.navigate(["maindisplay/customerList"]);
   }
 
   ngOnInit() {

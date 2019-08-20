@@ -77,14 +77,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
           {
             path:'register',
             component:RegisterComponent
+          },
+          {
+            path:'customerList',
+            component:CustomerListComponent
           }
         ]
       },
 
-      {
-        path:'customerList',
-        component:CustomerListComponent
-      },
+
       {
         path: 'customer-dashboard',
         component: CustomerDashboardComponent,
@@ -100,6 +101,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
           {
             path: 'dashboard',
             component: DashboardComponent
+          },
+          {
+            path:'customerList',
+            component:CustomerListComponent
           }
         ]
       }
