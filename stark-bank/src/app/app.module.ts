@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AccountsComponent } from './accounts/accounts.component';
     LoginComponent,
     CustomerDetailsComponent,
     BankuserloginComponent,
-    AccountsComponent
+    AccountsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
