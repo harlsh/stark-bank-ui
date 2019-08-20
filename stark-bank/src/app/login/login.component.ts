@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
 handleFormData(form)
 {
-this.router.navigate(["dashboard"]);
+this.router.navigate(["customer-dashboard"]);
 }
 }
 

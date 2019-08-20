@@ -19,6 +19,7 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
 import { AccountsComponent } from './accounts/accounts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainDisplayComponent } from './main-display/main-display.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MainDisplayComponent } from './main-display/main-display.component';
     BankuserloginComponent,
     AccountsComponent,
     DashboardComponent,
-    MainDisplayComponent
+    MainDisplayComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +46,18 @@ import { MainDisplayComponent } from './main-display/main-display.component';
     FormsModule,
     RouterModule.forRoot([
       {
-        path:'',
+        path: '',
+        redirectTo: 'maindisplay',
+        pathMatch:'full'
+      },
+      {
+        path:'maindisplay',
         component:MainDisplayComponent,
         children:[
+          {
+            path:'',
+            component:HomeComponent
+          },
           {
             path:'home',
             component:HomeComponent
@@ -58,42 +69,37 @@ import { MainDisplayComponent } from './main-display/main-display.component';
           {
             path:'bankUser',
             component:BankUserComponent
-          },{
+          },
+          {
+            path:'bankuserlogin',
+            component:BankuserloginComponent
+          },
+          {
             path:'register',
             component:RegisterComponent
           }
         ]
       },
 
-
       {
         path:'customerList',
         component:CustomerListComponent
       },
-
       {
-        path:'bankuserlogin',
-        component:BankuserloginComponent
-      },
-      {
-        path:'customer/:id',
-        component:CustomerDetailsComponent
-      },
-      {
-        path:'accounts',
-        component:AccountsComponent
-      },
-      {
-        path:'dashboard',
-        component:DashboardComponent,
-        children:[
+        path: 'customer-dashboard',
+        component: CustomerDashboardComponent,
+        children: [
           {
-            path:'customer-dashboard',
-            component:CustomerDashboardComponent
+            path:'customer',
+            component:CustomerDetailsComponent
           },
           {
-            path:'sub',
-            component:MainDisplayComponent
+            path:'accounts',
+            component:AccountsComponent
+          },
+          {
+            path: 'dashboard',
+            component: DashboardComponent
           }
         ]
       }
