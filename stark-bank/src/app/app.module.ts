@@ -79,6 +79,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
             component:RegisterComponent
           },
           {
+            path:'customer',
+            component:CustomerDetailsComponent
+          },
+          {
             path:'customerList',
             component:CustomerListComponent
           }
