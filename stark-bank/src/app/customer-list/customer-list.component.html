@@ -2,7 +2,7 @@
 <div class="card col-md-4" *ngFor="let customer of customers" >
   <div class="card-header">
 
-    <a [routerLink]="['customer-dashboard/customer']" routerLinkActive="router-link-active"> <h4>{{customer.firstName+" "+customer.lastName}} </h4> </a>
+    <a [routerLink]="['customer']" routerLinkActive="router-link-active"> <h4>{{customer.firstName+" "+customer.lastName}} </h4> </a>
 <!--    {{customer.firstName+customer.lastName}}-->
 </div>
 <div class="card-body">
