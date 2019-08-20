@@ -45,27 +45,32 @@ import { MainDisplayComponent } from './main-display/main-display.component';
     RouterModule.forRoot([
       {
         path:'',
-        component:HomeComponent
+        component:MainDisplayComponent,
+        children:[
+          {
+            path:'home',
+            component:HomeComponent
+          },
+          {
+            path:'login',
+            component:LoginComponent
+          },
+          {
+            path:'bankUser',
+            component:BankUserComponent
+          },{
+            path:'register',
+            component:RegisterComponent
+          }
+        ]
       },
-      {
-        path:'home',
-        component:HomeComponent
-      },
-      {
-        path:'bankUser',
-        component:BankUserComponent
-      },
+
+
       {
         path:'customerList',
         component:CustomerListComponent
-      },{
-        path:'register',
-        component:RegisterComponent
       },
-      {
-        path:'login',
-        component:LoginComponent
-      },
+
       {
         path:'bankuserlogin',
         component:BankuserloginComponent
@@ -92,7 +97,7 @@ import { MainDisplayComponent } from './main-display/main-display.component';
           }
         ]
       }
-      
+
     ])
   ],
   providers: [],
