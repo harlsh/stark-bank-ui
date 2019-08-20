@@ -17,6 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MainDisplayComponent } from './main-display/main-display.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { AccountsComponent } from './accounts/accounts.component';
     LoginComponent,
     CustomerDetailsComponent,
     BankuserloginComponent,
-    AccountsComponent
+    AccountsComponent,
+    DashboardComponent,
+    MainDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +61,6 @@ import { AccountsComponent } from './accounts/accounts.component';
       },{
         path:'register',
         component:RegisterComponent
-      },{
-        path:'customer/:id',
-        component:CustomerDashboardComponent
       },
       {
         path:'login',
@@ -70,13 +71,28 @@ import { AccountsComponent } from './accounts/accounts.component';
         component:BankuserloginComponent
       },
       {
-        path:'customer-details',
+        path:'customer/:id',
         component:CustomerDetailsComponent
       },
       {
         path:'accounts',
         component:AccountsComponent
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+        children:[
+          {
+            path:'customer-dashboard',
+            component:CustomerDashboardComponent
+          },
+          {
+            path:'sub',
+            component:MainDisplayComponent
+          }
+        ]
       }
+      
     ])
   ],
   providers: [],
