@@ -20,6 +20,8 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainDisplayComponent } from './main-display/main-display.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { MaketransactionComponent } from './maketransaction/maketransaction.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AccountsComponent,
     DashboardComponent,
     MainDisplayComponent,
-    SidebarComponent
+    SidebarComponent,
+    TransactionsComponent,
+    MaketransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
             component:RegisterComponent
           },
           {
+            path:'customer',
+            component:CustomerDetailsComponent
+          },
+          {
             path:'customerList',
             component:CustomerListComponent
           }
@@ -105,7 +113,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
           {
             path:'customerList',
             component:CustomerListComponent
+          },
+          {
+            path:'transactions',
+            component:TransactionsComponent
+          },
+          {
+            path:'makeTransaction',
+            component:MaketransactionComponent
           }
+
         ]
       }
 
