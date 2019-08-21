@@ -12,4 +12,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  handleFormData(data){
+    console.log(data);
+  }
 }

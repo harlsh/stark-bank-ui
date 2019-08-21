@@ -1,5 +1,8 @@
+import { Address } from './Address';
+
 export class Customer{
-    constructor(private _id:number,
+    constructor(
+        private _id:string,
         private _phoneNumber:string, 
         private _firstName:string,
         private _lastName:string,
@@ -7,36 +10,40 @@ export class Customer{
         private _dateOfBirth:string,
         private _nationalId:string,
         private _userId:string,
-        private _password:string
+        private _password:string,
+        private _address:Address
         ){
 
     }
-    get id():number{
-        return this._id;
-    }
+    
     get phoneNumber(): string{
-       return this.phoneNumber;
+       return this._phoneNumber;
     }
     get firstName():string{
         return this._firstName;
     }
     get lastName(): string{
-        return this.lastName;
+        return this._lastName;
     }
     get gender():string{
-        return this.gender;
+        return this._gender;
     }
     get dateOfBirth():string{
-        return this.dateOfBirth;
+        return this._dateOfBirth;
     }
     get nationalId():string{
-        return this.nationalId;
+        return this._nationalId;
     }
     get userId():string{
-        return this.userId;
+        return this._userId;
     }
     get password():string{
-        return this.password;
+        return this._password;
     }
-
+    get address():Address{
+        return this._address;
+    }
+    get id():string{
+        return this._id;
+    }
 }
