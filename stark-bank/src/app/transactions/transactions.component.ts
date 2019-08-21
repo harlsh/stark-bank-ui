@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,PACKAGE_ROOT_URL} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.css']
+
 })
 export class TransactionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router){
+  }
 
   ngOnInit() {
   }
@@ -45,5 +48,8 @@ export class TransactionsComponent implements OnInit {
     }
 
     ]
-
+  makeTransaction()
+  {
+    this.router.navigate(["makeTransaction"]);
+  }
 }
