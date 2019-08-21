@@ -15,5 +15,10 @@ export class CustomerDetailsComponent implements OnInit {
   ngOnInit() {
     //this.customer=this.customerService.findByCustomerId(id);
   }
+  isDisabled=true;
+  onContinue()
+  {
+    this.isDisabled=!this.isDisabled;
+  }
 
 }
