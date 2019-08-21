@@ -1,20 +1,20 @@
 <div class="row">
-        <div class="card col-md-4" *ngFor="let account of accounts" >
+        <div class="card col-md-6" *ngFor="let account of accounts" >
           <div class="card-header">
                          {{account.id}}
         </div>
         <div class="card-body">
         
-        <p class="card-text">Name: {{account.name}}</p>
+        <p class="card-text">Account-Name: {{account.accountName}}</p>
         
         
-        <p class="card-text">Number:{{account.number}}</p>
+        <p class="card-text">Account-Number:{{account.accountNumber}}</p>
         
-        <p class="card-text" >Balance:{{account.balance}}</p>
         
         </div>
         <div class="card-footer">
-          <button type="button" class="btn btn-success "  name="backButton"><i class="fas fa-arrow-left fa-6x"></i></button>
+          <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
+          <p>Balance:  <b>{{account.balance}}</b></p>
         </div>
         </div>
         </div>
