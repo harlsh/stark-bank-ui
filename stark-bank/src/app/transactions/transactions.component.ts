@@ -50,6 +50,6 @@ export class TransactionsComponent implements OnInit {
     ]
   makeTransaction()
   {
-    this.router.navigate(["makeTransaction"]);
+    this.router.navigate(["/customer-dashboard/makeTransaction"]);
   }
 }

@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container text-center">
+  <br><br><br>
   <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-6  text-center">
       <form>
         <div id="contact-form" class="form-container" data-form-container>
           <div class="row">
@@ -29,12 +30,14 @@
 					</span>
             </div>
             <div class="row">
-              <span class="req-input message-box"></span>
+					<span class="req-input">
 						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Amount to Transfer."> </span>
-						<textarea type="textarea" data-min-length="10" placeholder="Amount"></textarea>
+						<input type="tel" placeholder="Amount">
+					</span>
             </div>
+
             <div class="row submit-row">
-              <button type="button" class="btn btn-block submit-form">Submit</button>
+              <button type="button" class="btn btn-block submit-form" (click)="send()">Submit</button>
             </div>
           </div>
         </div>

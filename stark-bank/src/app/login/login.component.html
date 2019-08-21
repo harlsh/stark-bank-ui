@@ -19,7 +19,8 @@
             <a href="#" class="forgot-password">
                 Forgot the password?
             </a>
-            <a href="register" class="forgot-password" onclick="register()">
+
+            <a [routerLink]="['/maindisplay/register']" routerLinkActive="router-link-active"  class="forgot-password">
                 Do not have an account?
             </a>
         </div><!-- /card-container -->

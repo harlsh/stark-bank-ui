@@ -11,5 +11,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
+  msg()
+  {
+    alert("Registration succesful");
+  }
 
 }
