@@ -1,22 +1,32 @@
+<div class="container">
+  <br>
+<div class="row ">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+  <h1 >Accounts</h1>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+  <br>
 <div class="row">
-        <div class="card col-md-6" *ngFor="let account of accounts" >
+        <div class="card col-md-5" *ngFor="let account of accounts" >
           <div class="card-header">
                          {{account.id}}
         </div>
         <div class="card-body">
-        
-        <p class="card-text">Account-Name: {{account.accountName}}</p>
-        
-        
-        <p class="card-text">Account-Number:{{account.accountNumber}}</p>
-        
-        
-        </div>
-        <div class="card-footer">
+
+
+        <p class="card-text">Account Name: {{account.accountName}}</p>
+
+
+        <p class="card-text">Account Number:{{account.accountNumber}}</p>
+
+
+
           <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
           <p>Balance:  <b>{{account.balance}}</b></p>
         </div>
         </div>
         </div>
-        
-        
+
+</div>

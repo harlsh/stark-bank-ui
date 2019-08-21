@@ -11,17 +11,17 @@ export class AccountsComponent implements OnInit {
   accounts=[{
     id:1,
     accountNumber:101,
-    accountName:"SBI",
+    accountName:"Harish Reddy",
     balance:1016
   },{
     id:2,
     accountNumber:102,
-    accountName:"SBI",
+    accountName:"Charan Reddy",
     balance:505
   },{
     id:3,
     accountNumber:103,
-    accountName:"SBI",
+    accountName:"Krishna Murthy",
     balance:332
   }
 ]

@@ -1,9 +1,9 @@
 .card-header{
-  background-color: darkblue;
+  background-color: grey;
   color: white
 }
 .card-body{
-background-color:orange
+background-color:darkgrey;
 }
 .card-footer{
   background-color: #777
