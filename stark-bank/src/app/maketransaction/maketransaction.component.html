@@ -1,0 +1,48 @@
+<div class="container text-center">
+  <br><br><br>
+  <div class="row">
+
+    <div class="col-md-6  text-center">
+      <form>
+        <div id="contact-form" class="form-container" data-form-container>
+          <div class="row">
+            <div class="form-title">
+              <span>Make Transaction</span>
+            </div>
+          </div>
+          <div class="input-container">
+            <div class="row">
+					<span class="req-input" >
+						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Account Holder Name."> </span>
+						<input type="text" data-min-length="8" placeholder="Account Holder Name">
+					</span>
+            </div>
+            <div class="row">
+					<span class="req-input">
+						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Account Number."> </span>
+						<input type="email" placeholder="Account Number">
+					</span>
+            </div>
+            <div class="row">
+					<span class="req-input">
+						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter IFSC Code."> </span>
+						<input type="tel" placeholder="IFSC">
+					</span>
+            </div>
+            <div class="row">
+					<span class="req-input">
+						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Amount to Transfer."> </span>
+						<input type="tel" placeholder="Amount">
+					</span>
+            </div>
+
+            <div class="row submit-row">
+              <button type="button" class="btn btn-block submit-form" (click)="send()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div></div>
+</div>
+
+

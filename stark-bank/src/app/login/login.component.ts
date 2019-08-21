@@ -16,5 +16,9 @@ handleFormData(form)
 {
 this.router.navigate(["customer-dashboard"]);
 }
+  register()
+  {
+    this.router.navigate(["maindisplay/register"]);
+  }
 }
 

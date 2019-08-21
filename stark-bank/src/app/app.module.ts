@@ -99,7 +99,11 @@ import { MaketransactionComponent } from './maketransaction/maketransaction.comp
         component: CustomerDashboardComponent,
         children: [
           {
-            path:'customer',
+            path:'',
+            component:CustomerDetailsComponent
+          },
+          {
+             path:'customer',
             component:CustomerDetailsComponent
           },
           {
