@@ -8,6 +8,10 @@ body{
   border-radius: 0.5rem;
   background: #fff;
 }
+input
+{
+  border-radius: 10px;
+}
 .profile-img{
   text-align: center;
 }

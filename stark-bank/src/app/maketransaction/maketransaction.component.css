@@ -98,7 +98,7 @@
   left:15px;
   color:white;
   border-radius:50%;
-  background:#00BCD4;
+  background:#818182;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -109,7 +109,7 @@
   width:100%;
   float:left;
   position:relative;
-  background:#00BCD4;
+  background:#818182;
   height:40px;
   display:inline-block;
   border-radius:0px;
@@ -144,7 +144,7 @@
   width:20px;
   height:4px;
   background:white;
-  border-radius:0px;
+  border-radius:10px;
   top:19px;
   left:10px;
   -ms-transform: rotate(-45deg); /* IE 9 */
@@ -162,7 +162,7 @@
 }
 
 .form-container .valid .input-status:after {
-  border-radius:0px;
+  border-radius:10px;
   width: 17px;
   height: 4px;
   background: white;
@@ -174,7 +174,7 @@
 }
 
 .form-container .valid .input-status:before {
-  border-radius:0px;
+  border-radius:10px;
   width: 11px;
   height: 4px;
   background:white;
@@ -203,9 +203,9 @@
 .form-container {
   margin:20px;
   padding:20px;
-  border-radius:0px;
-  background:#B3E5FC;
-  color:#00838F;
+  border-radius:10px;
+  background:#818182;
+  color:#f8f9fa;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -229,10 +229,10 @@
 
 .form-container .btn.submit-form{
   margin-top:15px;
-  padding:12px;
-  background:#00BCD4;
+  padding:5px;
+  background:#313535;
   color:white;
-  border-radius:0px;
+  border-radius:10px;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -335,7 +335,7 @@
 .form-container input[type=text], .form-container input[type=password], .form-container input[type=email],input[type=tel], form-container select{
   width:calc(100% - 50px);
   float:left;
-  border-radius:0px;
+  border-radius:10px;
   border:0px solid #ddd;
   padding:0px 9px;
   height:40px;
@@ -347,4 +347,6 @@
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
+
+
 
