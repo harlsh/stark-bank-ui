@@ -16,9 +16,14 @@ export class CustomerDetailsComponent implements OnInit {
     //this.customer=this.customerService.findByCustomerId(id);
   }
   isDisabled=true;
-  onContinue()
+  edit()
   {
-    this.isDisabled=!this.isDisabled;
+    this.isDisabled=false;
+  }
+  save()
+  {
+    this.isDisabled=true;
+    //call a function to update the data.
   }
 
 }
