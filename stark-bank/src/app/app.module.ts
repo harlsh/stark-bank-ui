@@ -20,6 +20,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainDisplayComponent } from './main-display/main-display.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AccountsComponent,
     DashboardComponent,
     MainDisplayComponent,
-    SidebarComponent
+    SidebarComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +111,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
           {
             path:'customerList',
             component:CustomerListComponent
+          },
+          {
+            path:'transactions',
+            component:TransactionsComponent
           }
         ]
       }
