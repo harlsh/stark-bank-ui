@@ -1,0 +1,39 @@
+<div class="container">
+  <br><br>
+<div class=" row">
+  <div class="col-md-4">
+
+  </div>
+
+
+  <div class="col-md-4">
+    <h1 class="text-center"> Transactions </h1>
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div>
+  <br><br>
+  <div class=" row">
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Amount</th>
+    <th scope="col">DebitedAccount</th>
+    <th scope="col">CreditedAccount</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let transaction of transactions">
+    <th scope="row">{{transaction.id}}</th>
+    <td>Rs. {{transaction.transactionAmount}}</td>
+    <td>{{transaction.creditedAccount}}</td>
+    <td>{{transaction.debitedAccount}}</td>
+  </tr>
+
+  </tbody>
+</table>
+  </div>
+</div>
