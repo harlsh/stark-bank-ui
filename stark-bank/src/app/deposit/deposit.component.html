@@ -1,13 +1,33 @@
-<div class="container">
-  <div class=""card>
-    <div class="row">
-      <p>Enter the Amount you want to Deposit</p>
-    </div>
-    <div class="row">
-      <input type="text" placeholder="Amount" name="amount">
-    </div>
-    <div class="row col-md-4 text-center">
-      <button type="button" class="btn btn-block submit-form" (click)="send()">Submit</button>
+<div class="container text-center">
+    <br><br><br>
+    <div class="row text-center">
+  
+      <div class="col-md-12">
+  
+        <form>
+          <h1><span class="text-center"><strong>Deposit Amount</strong> </span></h1>
+          <div id="contact-form" class="form-container" data-form-container>
+  
+            <div class="row">
+              <div class="form-title">
+              </div>
+            </div>
+            <div class="text-center">
+              <h5>Enter the Amount you want to Deposit</h5>
+            </div>
+            <div class="row">
+              <span class="req-input">
+                <span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Amount"> </span>
+                <input type="text" placeholder="Amount">
+              </span>
+            </div>
+  
+            <div class="row submit-row">
+              <button type="button" class="btn btn-block submit-form" (click)="send()">Submit</button>
+            </div>
+          </div>
+      
+      </form>
     </div>
   </div>
-</div>
+  </div>
