@@ -8,6 +8,10 @@ body{
   border-radius: 0.5rem;
   background: #fff;
 }
+input
+{
+  border-radius: 10px;
+}
 .profile-img{
   text-align: center;
 }
@@ -43,8 +47,9 @@ body{
   width: 70%;
   padding: 2%;
   font-weight: 600;
-  color: #6c757d;
+  color: whitesmoke;
   cursor: pointer;
+  background: #313535;
 }
 
 .proile-rating span{

@@ -4,9 +4,13 @@
     <div class="container">
         <div class="card card-container" style="background-color:white">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="../../assets/lock.jpg" />
-            <p id="profile-name" class="profile-name-card"></p>
+<!--            <img id="profile-img" class="profile-img-card" src="../../assets/lock.jpg" />-->
+         
             <form class="form-signin"  ngForm #form="ngForm" (ngSubmit)="handleFormData(form)">
+                <div class="text-center">
+                    <h5>Customer Login</h5>
+                </div>
+                <br>
                 <input type="name" id="name" class="form-control" placeholder="Enter Username" required autofocus>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">

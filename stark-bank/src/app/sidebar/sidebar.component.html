@@ -8,7 +8,7 @@
       <div class="menu">
         <ul>
           <li class="active">
-            <a [routerLink]="['customer']"
+            <a [routerLink]="['customer' ]"
                routerLinkActive="router-link-active">Profile</a>
           </li>
 
@@ -18,8 +18,24 @@
           </li>
 
           <li>
+            <a [routerLink]="['makeTransaction']"
+               routerLinkActive="router-link-active">SendMoney</a>
+          </li>
+          <li>
+            <a [routerLink]="['deposit']"
+               routerLinkActive="router-link-active">Deposit</a>
+          </li>
+          <li>
+            <a [routerLink]="['withdraw']"
+               routerLinkActive="router-link-active">Withdraw</a>
+          </li>
+          <li>
             <a [routerLink]="['transactions']"
-               routerLinkActive="router-link-active">Transactions</a>
+               routerLinkActive="router-link-active">Transaction List</a>
+          </li>
+          <li>
+            <a [routerLink]="['statement']"
+               routerLinkActive="router-link-active">Statement</a>
           </li>
 
 

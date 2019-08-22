@@ -1,12 +1,17 @@
+.card{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .card-header{
-  background-color: grey;
+  background-color:#313535;
   color: white
 }
 .card-body{
-background-color:darkgrey;
+margin:0px;
+background-color:rgba(109, 101, 101, 0.397);
 }
 .card-footer{
-  background-color: #777
+  background-color: rgba(109, 101, 101, 0.747);
 }
 /* Space out content a bit */
 .container{
@@ -23,8 +28,8 @@ body {
 .header,
 .marketing,
 .footer {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 /* Custom page header */

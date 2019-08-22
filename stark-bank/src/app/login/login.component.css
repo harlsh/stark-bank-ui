@@ -11,6 +11,7 @@
 }
 
 .card-container.card {
+  border-radius: 20px;
     max-width: 350px;
     padding: 40px 40px;
 }
@@ -138,4 +139,13 @@
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+input{
+  border-radius: 10px;
+  border: 10px;
+  border-color: black;
+  padding: 10px;
+  margin: 10px;
+  border-width: 5px;
+
 }

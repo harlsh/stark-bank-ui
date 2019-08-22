@@ -22,6 +22,8 @@ import { MainDisplayComponent } from './main-display/main-display.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MaketransactionComponent } from './maketransaction/maketransaction.component';
+import { DepositComponent } from './deposit/deposit.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { MaketransactionComponent } from './maketransaction/maketransaction.comp
     MainDisplayComponent,
     SidebarComponent,
     TransactionsComponent,
-    MaketransactionComponent
+    MaketransactionComponent,
+    DepositComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,
@@ -125,6 +129,14 @@ import { MaketransactionComponent } from './maketransaction/maketransaction.comp
           {
             path:'makeTransaction',
             component:MaketransactionComponent
+          },
+          {
+            path:'deposit',
+            component:DepositComponent
+          },
+          {
+            path:'withdraw',
+            component:WithdrawComponent
           }
 
         ]
