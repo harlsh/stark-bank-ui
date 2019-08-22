@@ -11,9 +11,9 @@
 }
 
 .card-container.card {
+  border-radius: 20px;
     max-width: 350px;
     padding: 40px 40px;
-    border-radius: 20px;
 }
 
 .btn {
@@ -140,7 +140,6 @@
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
-
 input{
   border-radius: 10px;
   border: 10px;
@@ -150,4 +149,3 @@ input{
   border-width: 5px;
 
 }
-

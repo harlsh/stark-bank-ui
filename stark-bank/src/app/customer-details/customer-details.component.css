@@ -47,8 +47,9 @@ input
   width: 70%;
   padding: 2%;
   font-weight: 600;
-  color: #6c757d;
+  color: whitesmoke;
   cursor: pointer;
+  background: #313535;
 }
 
 .proile-rating span{
