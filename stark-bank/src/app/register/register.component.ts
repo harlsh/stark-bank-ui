@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   handleFormData(data){
-    console.log(data);
+    console.log(data.value);
+    
   }
 }
