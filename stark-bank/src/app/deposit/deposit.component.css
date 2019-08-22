@@ -1,0 +1,16 @@
+input{
+  border-radius: 10px;
+  border: 10px;
+  border-color: black;
+  padding: 10px;
+  margin: 10px;
+  border-width: 5px;
+background-color: darkgrey;
+}
+.card{
+  background-color: black;
+  color: white;
+}
+button{
+background-color: darkgrey;
+}
