@@ -2,7 +2,6 @@ import { Address } from './Address';
 
 export class Customer{
     constructor(
-        private _id:string,
         private _phoneNumber:string, 
         private _firstName:string,
         private _lastName:string,
@@ -43,7 +42,5 @@ export class Customer{
     get address():Address{
         return this._address;
     }
-    get id():string{
-        return this._id;
-    }
+    
 }

@@ -3,8 +3,7 @@ export class Address {
         private _houseNumber:string, 
         private _street:string,
         private _state:string,
-        private _pin:string,
-        
+        private _pin:string
         ){}
     
     get houseNumber(){

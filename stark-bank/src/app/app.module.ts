@@ -24,6 +24,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { MaketransactionComponent } from './maketransaction/maketransaction.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
