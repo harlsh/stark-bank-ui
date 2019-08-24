@@ -17,6 +17,11 @@
                         <h5>Bank User Login</h5>
                     </div>
                     <br>
+                    <div class="dropdown form-group">
+                        <select class="btn btn-secondary dropdown-toggle">
+                          <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch.ifsc}}</option>
+                        </select>
+                      </div>
                 <input type="name" id="name" class="form-control" placeholder="Enter Username" required autofocus>
 
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
