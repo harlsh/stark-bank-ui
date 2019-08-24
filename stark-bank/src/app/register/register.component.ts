@@ -43,5 +43,6 @@ export class RegisterComponent implements OnInit {
       data.value.password,
       address);
     console.log(customer);
+    console.log(data.value.branch);
   }
 }
