@@ -16,11 +16,6 @@ export class BankService {
       return this.customers;
   }
   
-  findByCustomerId(id:number){
-     return this.customers.filter(customer=>customer.id===id)[0];
-  }
+   
   
-  deleteCustomer(id:number){
-    this.customers=this.customers.filter(customer=>customer.id !==id)
-  }
 }

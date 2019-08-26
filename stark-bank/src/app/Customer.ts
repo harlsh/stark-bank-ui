@@ -1,42 +1,44 @@
-export class Customer{
-    constructor(private _id:number,
-        private _phoneNumber:string, 
-        private _firstName:string,
-        private _lastName:string,
-        private _gender:string,
-        private _dateOfBirth:string,
-        private _nationalId:string,
-        private _userId:string,
-        private _password:string
-        ){
+import { Address } from './Address';
 
-    }
-    get id():number{
-        return this._id;
-    }
-    get phoneNumber(): string{
+export class Customer{
+    constructor(
+        private phoneNumber:string, 
+        private firstName:string,
+        private lastName:string,
+        private gender:string,
+        private dateOfBirth:string,
+        private nationalId:string,
+        private userId:string,
+        private password:string,
+        private address:Address
+        ){ }
+    
+    get _phoneNumber(): string{
        return this.phoneNumber;
     }
-    get firstName():string{
-        return this._firstName;
+    get _firstName():string{
+        return this.firstName;
     }
-    get lastName(): string{
+    get _lastName(): string{
         return this.lastName;
     }
-    get gender():string{
+    get _gender():string{
         return this.gender;
     }
-    get dateOfBirth():string{
+    get _dateOfBirth():string{
         return this.dateOfBirth;
     }
-    get nationalId():string{
+    get _nationalId():string{
         return this.nationalId;
     }
-    get userId():string{
+    get _userId():string{
         return this.userId;
     }
-    get password():string{
+    get _password():string{
         return this.password;
     }
-
+    get _address():Address{
+        return this.address;
+    }
+    
 }

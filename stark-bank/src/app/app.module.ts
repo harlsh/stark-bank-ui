@@ -24,6 +24,9 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { MaketransactionComponent } from './maketransaction/maketransaction.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NameFormatterPipe } from './name-formatter.pipe';
+import { BranchFormatterPipe } from './branch-formatter.pipe';
 
 
 @NgModule({
@@ -46,12 +49,15 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     TransactionsComponent,
     MaketransactionComponent,
     DepositComponent,
-    WithdrawComponent
+    WithdrawComponent,
+    NameFormatterPipe,
+    BranchFormatterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
