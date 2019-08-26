@@ -4,6 +4,7 @@ import { Customer } from '../Customer';
 import { Branch } from '../Branch';
 import { CustomerService } from '../customer.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   branches: Branch[];
   private subscription:Subscription;
 
-  constructor(private customerService:CustomerService) { }
+  constructor(private customerService:CustomerService, private router: Router) { }
 
   ngOnInit() {
     this.subscription = this.customerService
@@ -42,7 +43,12 @@ export class RegisterComponent implements OnInit {
       data.value.userId,
       data.value.password,
       address);
-    console.log(customer);
+    console.log(JSON.stringify(customer, null, "\t"));
     console.log(data.value.branch);
+    let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == data.value.branch)[0].id;
+    console.log("Branch ID is : " + branchId);
+    this.customerService.saveCustomer(customer, branchId).subscribe(response => {
+      this.router.navigate(['/']);
+    });
   }
 }

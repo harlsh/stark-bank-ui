@@ -2,45 +2,43 @@ import { Address } from './Address';
 
 export class Customer{
     constructor(
-        private _phoneNumber:string, 
-        private _firstName:string,
-        private _lastName:string,
-        private _gender:string,
-        private _dateOfBirth:string,
-        private _nationalId:string,
-        private _userId:string,
-        private _password:string,
-        private _address:Address
-        ){
-
-    }
+        private phoneNumber:string, 
+        private firstName:string,
+        private lastName:string,
+        private gender:string,
+        private dateOfBirth:string,
+        private nationalId:string,
+        private userId:string,
+        private password:string,
+        private address:Address
+        ){ }
     
-    get phoneNumber(): string{
-       return this._phoneNumber;
+    get _phoneNumber(): string{
+       return this.phoneNumber;
     }
-    get firstName():string{
-        return this._firstName;
+    get _firstName():string{
+        return this.firstName;
     }
-    get lastName(): string{
-        return this._lastName;
+    get _lastName(): string{
+        return this.lastName;
     }
-    get gender():string{
-        return this._gender;
+    get _gender():string{
+        return this.gender;
     }
-    get dateOfBirth():string{
-        return this._dateOfBirth;
+    get _dateOfBirth():string{
+        return this.dateOfBirth;
     }
-    get nationalId():string{
-        return this._nationalId;
+    get _nationalId():string{
+        return this.nationalId;
     }
-    get userId():string{
-        return this._userId;
+    get _userId():string{
+        return this.userId;
     }
-    get password():string{
-        return this._password;
+    get _password():string{
+        return this.password;
     }
-    get address():Address{
-        return this._address;
+    get _address():Address{
+        return this.address;
     }
     
 }

@@ -1,24 +1,24 @@
 export class Address {
     constructor(
-        private _houseNumber:string, 
-        private _street:string,
-        private _state:string,
-        private _pin:string
+        private houseNumber:string, 
+        private street:string,
+        private state:string,
+        private pin:string
         ){}
     
-    get houseNumber(){
-        return this._houseNumber;
+    get _houseNumber(){
+        return this.houseNumber;
     }
 
-    get street(){
-        return this._street;
+    get _street(){
+        return this.street;
     }
 
-    get state(){
-        return this._state;
+    get _state(){
+        return this.state;
     }
 
-    get pin(){
-        return this._pin;
+    get _pin(){
+        return this.pin;
     }
 }
