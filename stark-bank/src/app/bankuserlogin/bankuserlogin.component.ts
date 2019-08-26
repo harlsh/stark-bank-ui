@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { BankUser } from '../BankUser';
-
+import { CustomerService } from '../customer.service';
 import { Subscription } from 'rxjs';
 import { BankuserService } from '../bankuser.service';
 import { Branch } from '../Branch';
-import { CustomerService } from '../customer.service';
 
 
 @Component({
@@ -14,13 +13,12 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./bankuserlogin.component.css']
 })
 export class BankuserloginComponent implements OnInit {
-  bankusers:BankUser[];
+  branches: Branch[];
   private subscription:Subscription;
   bankUser:BankUser;
-  branches:Branch[];
+  
 
-
-  constructor(private customerService:CustomerService, private router:Router) { }
+  constructor(private customerService:CustomerService,private router:Router) { }
   myFunc(form){
     this.router.navigate(["maindisplay/customerList"]);
   }
@@ -33,7 +31,8 @@ export class BankuserloginComponent implements OnInit {
       this.branches = response;
       
     })
-  }
+                        }
+
 
   handleFormData(data){
     console.log(data.value);
