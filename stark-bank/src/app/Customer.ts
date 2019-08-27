@@ -12,6 +12,7 @@ export class Customer{
         private password:string,
         private address:Address
         ){ }
+
     
     get _phoneNumber(): string{
        return this.phoneNumber;

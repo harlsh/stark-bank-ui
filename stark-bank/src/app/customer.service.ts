@@ -16,9 +16,12 @@ export class CustomerService {
 
   private CUSTOMER_API_URL = "http://localhost:8080/api/v1/customers";
   private BRANCH_API_URL = "http://localhost:8080/api/v1/branches/";
+  
 
   branch:any[] = [];
   customers: any[] = [];
+  transactions:any[]=[];
+
   constructor(private httpClient:HttpClient) { }
 
   saveCustomer(customer: Customer, id: string):Observable<any>{
@@ -28,5 +31,9 @@ export class CustomerService {
 
   listBranches():Observable<any[]>{
     return this.httpClient.get<any[]>(this.BRANCH_API_URL);
+  }
+
+  getCustomerTransactions(id:any, aid:any):Observable<any[]>{
+    return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
   }
 }
