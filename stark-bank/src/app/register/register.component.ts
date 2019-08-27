@@ -42,7 +42,8 @@ export class RegisterComponent implements OnInit {
       data.value.nationalId,
       data.value.userId,
       data.value.password,
-      address);
+      address,
+      false);
     console.log(JSON.stringify(customer, null, "\t"));
     console.log(data.value.branch);
     let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == data.value.branch)[0].id;

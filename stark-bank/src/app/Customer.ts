@@ -10,9 +10,13 @@ export class Customer{
         private nationalId:string,
         private userId:string,
         private password:string,
-        private address:Address
+        private address:Address,
+        private login:boolean
         ){ }
     
+    get _login(): boolean{
+        return this.login;
+    }
     get _phoneNumber(): string{
        return this.phoneNumber;
     }
