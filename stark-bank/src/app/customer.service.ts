@@ -34,6 +34,10 @@ export class CustomerService {
   loginBankUser(bankUser: BankUser, id: string):Observable<any>{
     return this.httpClient.post(this.BRANCH_API_URL + id + "/bankusers/login", JSON.stringify(bankUser), httpOptions)
   }
+  
+  getCustomerTransactions(id:any, aid:any):Observable<any[]>{
+    return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
+  }
 
   createCustomerLogin(branchId, bankUserId, customerId){
     console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId)

@@ -13,6 +13,7 @@ export class Customer{
         private address:Address,
         private login:boolean
         ){ }
+
     
     get _login(): boolean{
         return this.login;

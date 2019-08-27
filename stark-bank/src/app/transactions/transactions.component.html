@@ -20,6 +20,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Amount</th>
+        <th scope="col">Time</th>
         <th scope="col">DebitedAccount</th>
         <th scope="col">CreditedAccount</th>
 
@@ -28,9 +29,10 @@
       <tbody>
       <tr *ngFor="let transaction of transactions">
         <th scope="row">{{transaction.id}}</th>
-        <td>{{transaction.transactionAmount  | currency:'INR':true:'4.2-2'}}</td>
-        <td>{{transaction.creditedAccount}}</td>
-        <td>{{transaction.debitedAccount}}</td>
+        <td>{{transaction.transaction_amount  | currency:'INR':true:'4.2-2'}}</td>
+        <td>{{transaction.transaction_time}}</td>
+        <td>{{transaction.credited_account}}</td>
+        <td>{{transaction.debited_account}}</td>
       </tr>
 
       </tbody>
