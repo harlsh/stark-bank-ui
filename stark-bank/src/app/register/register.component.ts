@@ -46,10 +46,12 @@ export class RegisterComponent implements OnInit {
       false);
     console.log(JSON.stringify(customer, null, "\t"));
     console.log(data.value.branch);
-    let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == data.value.branch)[0].id;
+    let branchId = this.branches.filter(branch => branch.branchName==data.value.branch || branch.ifsc == data.value.branch)[0].id;
     console.log("Branch ID is : " + branchId);
+
     this.customerService.saveCustomer(customer, branchId).subscribe(response => {
       this.router.navigate(['/']);
     });
+
   }
 }
