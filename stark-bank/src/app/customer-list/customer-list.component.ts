@@ -22,8 +22,8 @@ export class CustomerListComponent implements OnInit {
     this.customers = this.customerListingService.getCustomers();
     console.log(this.customers);
   }
-  AcceptFun(id: string){
-    console.log("jasdhkjsad");
+  AcceptFun(event: Event){
+    console.log(event);
     this.customerService.createCustomerLogin(this.customerListingService.getBranchId, this.customerListingService.getBankUserId, id);
   }
 

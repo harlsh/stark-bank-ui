@@ -17,7 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 import { MainDisplayComponent } from './main-display/main-display.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TransactionsComponent } from './transactions/transactions.component';
@@ -43,7 +44,7 @@ import { BranchFormatterPipe } from './branch-formatter.pipe';
     CustomerDetailsComponent,
     BankuserloginComponent,
     AccountsComponent,
-    DashboardComponent,
+    
     MainDisplayComponent,
     SidebarComponent,
     TransactionsComponent,
@@ -120,10 +121,7 @@ import { BranchFormatterPipe } from './branch-formatter.pipe';
             path:'accounts',
             component:AccountsComponent
           },
-          {
-            path: 'dashboard',
-            component: DashboardComponent
-          },
+          
           {
             path:'customerList',
             component:CustomerListComponent

@@ -21,22 +21,55 @@ export class BankuserloginComponent implements OnInit {
   branches: Branch[];
   private subscription:Subscription;
   bankUser:BankUser;
+<<<<<<< HEAD
   customers: Customer[];
 
   constructor(
     private customerService:CustomerService,
     private router:Router,
     private customerListingService:CustomerListingService) { }
+=======
+  branchId:any;
+  bankUsers : any[];
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 
   myFunc(form){
-    this.router.navigate(["maindisplay/customerList"]);
+    console.log(form.value);
+    // console.log(data.value.branch);
+    let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == form.value.branch)[0].id;
+    console.log("Branch ID is : " + branchId);
+    this.subscription = this.customerService
+      .listBankUsers(branchId)
+      .subscribe(response => {
+        this.bankUsers = response;
+        console.log(this.bankUsers);
+        
+      })
+      if(this.bankUsers.filter( b=> b.userName == form.value.userName && b.password == form.value.pass ))
+        this.router.navigate(["maindisplay/customerList"]);
+   
   }
 
   ngOnInit(){
     this.subscription = this.customerService
     .listBranches()
+<<<<<<< HEAD
     .subscribe(response => this.branches = response)
     }
+=======
+    .subscribe(response => {
+      this.branches = response;
+      
+    })
+          ;
+          this.subscription = this.customerService
+          .listBankUsers(this.branchId)
+          .subscribe(response => {
+            this.bankUsers = response;
+            console.log(this.bankUsers);
+            
+          })              }
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 
 
   handleFormData(data){
@@ -53,5 +86,13 @@ export class BankuserloginComponent implements OnInit {
     
     
   }
+<<<<<<< HEAD
   
+=======
+  bankuser()
+   {
+  //  
+console.log("hey");
+  }
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 }
