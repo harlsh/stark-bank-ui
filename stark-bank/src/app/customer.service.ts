@@ -36,10 +36,9 @@ export class CustomerService {
   getCustomerTransactions(id:any, aid:any):Observable<any[]>{
     return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
   }
-  
-  listBankUsers(id : string):Observable<any[]>{
-    console.log(this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/"));
-    console.log(this.BRANCH_API_URL+"/"+id+"/bankusers/");
-    return this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/");
+
+  createCustomerLogin(branchId, bankUserId, customerId){
+    console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId)
+    this.httpClient.post(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId, JSON.stringify({}), httpOptions)
   }
 }
