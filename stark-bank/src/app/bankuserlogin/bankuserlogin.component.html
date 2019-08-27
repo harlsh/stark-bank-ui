@@ -12,7 +12,7 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 <!--            <img id="profile-img" class="profile-img-card" src="../../assets/angry_arya.jpg" />-->
           
-            <form class="form-signin" ngForm #form = "ngForm" (ngSubmit)="myFunc(form)">
+            <form class="form-signin" ngForm #form = "ngForm" (ngSubmit)="handleFormData(form)">
                     <div class="text-center">
                         <h5>Bank User Login</h5>
                     </div>
@@ -27,9 +27,15 @@
 >>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
                         </select>
                       </div>
+<<<<<<< HEAD
+                <input type="name" id="name" ngModel name="userName" class="form-control" placeholder="Enter Username" required autofocus>
+
+                <input type="password" id="inputPassword" ngModel name="password" class="form-control" placeholder="Password" required>
+=======
                 <input type="name"ngModel  name="bankUser" id="name" class="form-control" placeholder="Enter Username" required autofocus>
 
                 <input type="password" ngModel  name="pass" id="inputPassword" class="form-control" placeholder="Password" required>
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me

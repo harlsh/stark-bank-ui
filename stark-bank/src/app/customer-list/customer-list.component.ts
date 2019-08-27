@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerListingService } from '../customer-listing.service';
+import { Customer } from '../Customer';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,43 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  /* customers:Customer[]=[];
-  constructor(private customerService:CustomerService) { }
+  private customers:Customer[];
+  
+  constructor(
+    private customerListingService: CustomerListingService,
+    private customerService: CustomerService
+  ) { }
 
   ngOnInit() {
-    this.customers = this.customerService.listCustomers();
+    console.log("recieving customers")
+    this.customers = this.customerListingService.getCustomers();
+    console.log(this.customers);
   }
-
-  findById(id):Customer{customer return this.customerService.findByCustomerId(id);
+  AcceptFun(event: Event){
+    console.log(event);
+    this.customerService.createCustomerLogin(this.customerListingService.getBranchId, this.customerListingService.getBankUserId, id);
   }
-  */
-    attributes=["ID","FIRSTNAME","LASTNAME","DATEOFBIRTH","NATIONALID","Accept/Reject"];
-    customers=[{
-      id:1,
-      firstName: "Rachana",
-        lastName:"Kavukuntla",
-      dateOfBirth:"2/9/0984",
-      nationalId:23456
-
-    },
-    {
-      id:2,
-      firstName: "Sandhya",
-      lastName:"Lingamalla",
-      dateOfBirth:"2/9/0984",
-      nationalId:"23456"
-    },
-    {
-      id:3,
-      firstName: "Krishna",
-      lastName:"Murthy",
-      dateOfBirth:"2/9/0984",
-      nationalId:"23456"
-    }]
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 
 }

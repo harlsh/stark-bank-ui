@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, OnDestroy } from '@angular/core';
 import { Router } from "@angular/router";
 import { BankUser } from '../BankUser';
 import { CustomerService } from '../customer.service';
 import { Subscription } from 'rxjs';
 import { BankuserService } from '../bankuser.service';
 import { Branch } from '../Branch';
+import { Customer } from '../Customer';
+import { EventEmitter } from '@angular/core';
+import { CustomerListingService } from '../customer-listing.service';
 
 
 @Component({
@@ -13,13 +16,23 @@ import { Branch } from '../Branch';
   styleUrls: ['./bankuserlogin.component.css']
 })
 export class BankuserloginComponent implements OnInit {
+  
+  
   branches: Branch[];
   private subscription:Subscription;
   bankUser:BankUser;
+<<<<<<< HEAD
+  customers: Customer[];
+
+  constructor(
+    private customerService:CustomerService,
+    private router:Router,
+    private customerListingService:CustomerListingService) { }
+=======
   branchId:any;
   bankUsers : any[];
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 
-  constructor(private customerService:CustomerService,private router:Router) { }
   myFunc(form){
     console.log(form.value);
     // console.log(data.value.branch);
@@ -38,9 +51,12 @@ export class BankuserloginComponent implements OnInit {
   }
 
   ngOnInit(){
-    
     this.subscription = this.customerService
     .listBranches()
+<<<<<<< HEAD
+    .subscribe(response => this.branches = response)
+    }
+=======
     .subscribe(response => {
       this.branches = response;
       
@@ -53,16 +69,30 @@ export class BankuserloginComponent implements OnInit {
             console.log(this.bankUsers);
             
           })              }
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 
 
   handleFormData(data){
-    console.log(data.value);
     this.bankUser = new BankUser(data.value.userName, data.value.password);
-  
+    let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == data.value.branch)[0].id;
+    this.customerService.loginBankUser(this.bankUser, branchId).subscribe(response => {
+      console.log(response)
+      this.customers = response[0];
+      this.customerListingService.setCustomers(this.customers);
+      this.customerListingService.setBankUserId(response[1]);
+      this.router.navigate(["maindisplay/customerList"]);
+      this.customerListingService.setBranchId(branchId);
+    });
+    
+    
   }
+<<<<<<< HEAD
+  
+=======
   bankuser()
    {
   //  
 console.log("hey");
   }
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
 }
