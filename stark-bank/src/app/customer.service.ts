@@ -30,7 +30,6 @@ export class CustomerService {
   listBranches():Observable<any[]>{
     return this.httpClient.get<any[]>(this.BRANCH_API_URL);
   }
-<<<<<<< HEAD
 
   loginBankUser(bankUser: BankUser, id: string):Observable<any>{
     return this.httpClient.post(this.BRANCH_API_URL + id + "/bankusers/login", JSON.stringify(bankUser), httpOptions)
@@ -39,11 +38,5 @@ export class CustomerService {
   createCustomerLogin(branchId, bankUserId, customerId){
     console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId)
     this.httpClient.post(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId, JSON.stringify({}), httpOptions)
-=======
-  listBankUsers(id : string):Observable<any[]>{
-    console.log(this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/"));
-    console.log(this.BRANCH_API_URL+"/"+id+"/bankusers/");
-    return this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/");
->>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
   }
 }
