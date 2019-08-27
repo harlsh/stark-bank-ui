@@ -18,13 +18,18 @@
                     </div>
                     <br>
                     <div class="dropdown form-group">
+<<<<<<< HEAD
                         <select class="btn btn-secondary dropdown-toggle">
                           <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch.branchName}}</option>
+=======
+                        <select name="branch" ngModel class="btn btn-secondary dropdown-toggle">
+                          <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch | branchFormatter}}</option>
+>>>>>>> 4a58e5576b6471c0bc79d30d6df13ac2ce97a119
                         </select>
                       </div>
-                <input type="name" id="name" class="form-control" placeholder="Enter Username" required autofocus>
+                <input type="name"ngModel  name="bankUser" id="name" class="form-control" placeholder="Enter Username" required autofocus>
 
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" ngModel  name="pass" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
