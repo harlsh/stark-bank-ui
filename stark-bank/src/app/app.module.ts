@@ -18,6 +18,7 @@ import { BankuserloginComponent } from './bankuserlogin/bankuserlogin.component'
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
 
+
 import { MainDisplayComponent } from './main-display/main-display.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TransactionsComponent } from './transactions/transactions.component';

@@ -29,4 +29,9 @@ export class CustomerService {
   listBranches():Observable<any[]>{
     return this.httpClient.get<any[]>(this.BRANCH_API_URL);
   }
+  listBankUsers(id : string):Observable<any[]>{
+    console.log(this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/"));
+    console.log(this.BRANCH_API_URL+"/"+id+"/bankusers/");
+    return this.httpClient.get<any[]>(this.BRANCH_API_URL+"/"+id+"/bankusers/");
+  }
 }
