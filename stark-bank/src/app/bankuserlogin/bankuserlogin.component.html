@@ -22,15 +22,60 @@
                           <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch | branchFormatter}}</option>
                         </select>
                       </div>
-                <input type="name" id="name" ngModel name="userName" class="form-control" placeholder="Enter Username" required autofocus>
+                <!-- <input type="name" id="name" ngModel name="userName" class="form-control" placeholder="Enter Username" required autofocus>
 
-                <input type="password" id="inputPassword" ngModel name="password" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" ngModel name="password" class="form-control" placeholder="Password" required> -->
+
+                <div class="form-group">
+                        <input 
+                            type="name" 
+                            ngModel 
+                            required
+                            minlength="4"
+                            maxlength="10"
+                            #userName="ngModel"
+                            name="userName"
+                            class="form-control" 
+                            id="userName" 
+                            aria-describedby="name" 
+                            placeholder="UserName">
+                      </div>
+                      <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">
+                          <span *ngIf="userName.errors.required">Name field is required</span>
+                          <span *ngIf="userName.errors.minlength">
+                            Name field is required -
+                             {{userName.errors.minlength.requiredLength - userName.errors.minlength.actualLength}}</span>
+                      </div>
+
+                <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
+                <div class="form-group">
+                        <input 
+                            type="password" 
+                            ngModel 
+                            required
+                            minlength="4"
+                            maxlength="10"
+                            #password="ngModel"
+                            name="password"
+                            class="form-control" 
+                            id="inputPassword" 
+                            aria-describedby="name" 
+                            placeholder="Password">
+                      </div>
+                      <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                          <span *ngIf="password.errors.required">Password is required</span>
+                          <span *ngIf="password.errors.minlength">
+                            Password is required -
+                             {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}}</span>
+                      </div>
+
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                [disabled]="form.invalid">Sign in</button>
             </form><!-- /form -->
 
         </div><!-- /card-container -->

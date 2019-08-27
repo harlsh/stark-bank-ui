@@ -54,7 +54,7 @@ export class BankuserloginComponent implements OnInit {
 
   handleFormData(data){
     this.bankUser = new BankUser(data.value.userName, data.value.password);
-    let branchId = this.branches.filter(branch => branch.branchName || branch.ifsc == data.value.branch)[0].id;
+    let branchId = this.branches.filter(branch => branch.branchName==data.value.branch || branch.ifsc == data.value.branch)[0].id;
     this.customerService.loginBankUser(this.bankUser, branchId).subscribe(response => {
       console.log(response)
       this.customers = response[0];
