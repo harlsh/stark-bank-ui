@@ -1,12 +1,12 @@
 export class BankUser
 {
-    constructor(private _userName:string, private _password: string){}
+    constructor(private userName:string, private password: string){}
 
-    get userName(){
+    get _userName(){
         return this._userName;
     }
 
-    get password(){
+    get _password(){
         return this._password;
     }
 }

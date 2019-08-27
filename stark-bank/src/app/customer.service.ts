@@ -3,6 +3,7 @@ import { Customer } from './Customer';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { BankUser } from './BankUser';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class CustomerService {
 
-  private CUSTOMER_API_URL = "http://localhost:8080/api/v1/customers";
+  private CUSTOMER_API_URL = "http://localhost:8080/api/v1/customers/";
   private BRANCH_API_URL = "http://localhost:8080/api/v1/branches/";
 
   branch:any[] = [];
@@ -28,5 +29,14 @@ export class CustomerService {
 
   listBranches():Observable<any[]>{
     return this.httpClient.get<any[]>(this.BRANCH_API_URL);
+  }
+
+  loginBankUser(bankUser: BankUser, id: string):Observable<any>{
+    return this.httpClient.post(this.BRANCH_API_URL + id + "/bankusers/login", JSON.stringify(bankUser), httpOptions)
+  }
+
+  createCustomerLogin(branchId, bankUserId, customerId){
+    console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId)
+    this.httpClient.post(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId, JSON.stringify({}), httpOptions)
   }
 }

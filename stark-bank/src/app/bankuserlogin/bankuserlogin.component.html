@@ -12,19 +12,19 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 <!--            <img id="profile-img" class="profile-img-card" src="../../assets/angry_arya.jpg" />-->
           
-            <form class="form-signin" ngForm #form = "ngForm" (ngSubmit)="myFunc(form)">
+            <form class="form-signin" ngForm #form = "ngForm" (ngSubmit)="handleFormData(form)">
                     <div class="text-center">
                         <h5>Bank User Login</h5>
                     </div>
                     <br>
                     <div class="dropdown form-group">
-                        <select class="btn btn-secondary dropdown-toggle">
-                          <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch.ifsc}}</option>
+                        <select name="branch" ngModel class="btn btn-secondary dropdown-toggle">
+                          <option *ngFor="let branch of branches" class="form-control dropdown-item"> {{ branch | branchFormatter}}</option>
                         </select>
                       </div>
-                <input type="name" id="name" class="form-control" placeholder="Enter Username" required autofocus>
+                <input type="name" id="name" ngModel name="userName" class="form-control" placeholder="Enter Username" required autofocus>
 
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" ngModel name="password" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
