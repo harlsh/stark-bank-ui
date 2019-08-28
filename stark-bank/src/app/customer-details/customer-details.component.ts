@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../Customer';
+import { CustomerService } from '../customer.service';
+import { DashboardServiceService } from '../dashboard-service.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -9,15 +11,19 @@ import { Customer } from '../Customer';
 export class CustomerDetailsComponent implements OnInit {
 
   // attr:Customerattributes[]=[];
-/*  constructor(private customerService:CustomerService) { }
+  constructor(private customerService:CustomerService, private dashboardService: DashboardServiceService) { }
 
-  }*/
-
-  customer = {};
+  
+  private customer: any;
   isDisabled = true;
 
   ngOnInit() {
-    // this.customer=this.customerService.findByCustomerId(id);
+    console.log(this.customerService.getCustomer(this.dashboardService.getCustomer()));
+    this.customerService.getCustomer(this.dashboardService.getCustomer()).subscribe(response => {
+      this.customer = response;
+      delete this.customer.id
+      console.log(JSON.stringify(this.customer));}
+      );
   }
   edit() {
     this.isDisabled = false;
@@ -25,6 +31,10 @@ export class CustomerDetailsComponent implements OnInit {
   save() {
     this.isDisabled = true;
     // call a function to update the data.
+    this.customerService.editCustomer(this.dashboardService.getCustomer(), this.customer).subscribe(response => {
+      console.log("after save: " + response);
+      this.customer = response
+    })
   }
 
 }

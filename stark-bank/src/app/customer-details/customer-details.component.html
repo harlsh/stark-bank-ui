@@ -14,11 +14,9 @@
             <div class="col-md-6">
                 <div class="profile-head">
                     <h5>
-                        Kshiti Ghelani
+                        {{ customer.firstName }} {{ customer.lastName}}
                     </h5>
-                    <h6>
-                        Web Developer and Designer
-                    </h6>
+                   
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -41,7 +39,7 @@
                                 <label>User Id</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="Kshiti123" [disabled]='isDisabled'>
+                                <input name="userId" ngModel value="{{ customer.userId }}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -49,7 +47,7 @@
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="Kshiti Ghelani" [disabled]='isDisabled'>
+                                <input value="{{ customer.firstName }} {{ customer.lastName}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -57,7 +55,7 @@
                                 <label>Gender</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="kshitighelani@gmail.com" [disabled]='isDisabled'>
+                                <input value="{{ customer.gender}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -65,7 +63,7 @@
                                 <label>Date of Birth</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="20-11-1991" [disabled]='isDisabled'>
+                                <input value="{{ customer.dateOfBirth }}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -73,7 +71,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="123 456 7890" [disabled]='isDisabled'>
+                                <input value="{{ customer.phoneNumber }}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -86,7 +84,7 @@
                                 <label>House Number</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="101" [disabled]='isDisabled'>
+                                <input value="{{ customer.address.houseNumber}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -94,15 +92,15 @@
                                 <label>Street</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="Homes colony" [disabled]='isDisabled'>
+                                <input value="{{ customer.address.street}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label>City</label>
+                                <label>Pin</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="Hyderabad" [disabled]='isDisabled'>
+                                <input value="{{ customer.address.pin}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -110,7 +108,7 @@
                                 <label>State</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="Telangana" [disabled]='isDisabled'>
+                                <input value="{{ customer.address.state}}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">
@@ -118,7 +116,7 @@
                                 <label>National ID</label>
                             </div>
                             <div class="col-md-6">
-                                <input value="5490 4289 0384 6543" [disabled]='isDisabled'>
+                                <input value="{{ customer.nationalId}}" [disabled]='isDisabled'>
                             </div>
                         </div>
 

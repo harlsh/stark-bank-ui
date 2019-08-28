@@ -10,7 +10,7 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  private customers:Customer[];
+  private customers:any[];
   
   constructor(
     private customerListingService: CustomerListingService,
@@ -18,13 +18,25 @@ export class CustomerListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("recieving customers")
-    this.customers = this.customerListingService.getCustomers();
-    console.log(this.customers);
+    let branchId = this.customerListingService.getBranchId();
+    let bankUserId = this.customerListingService.getBankUserId();
+    this.customerService.getBankUserCustomers(branchId, bankUserId).subscribe( response => {
+      this.customers = response;
+      console.log(this.customers);
+      });
   }
   AcceptFun(event: Event, id){
-    console.log(id);
-    this.customerService.createCustomerLogin(this.customerListingService.getBranchId(), this.customerListingService.getBankUserId(), id);
+    this.customers = this.customers.filter(c=> c.id != id);
+    this.customerService.createCustomerLogin(this.customerListingService.getBranchId(), 
+      this.customerListingService.getBankUserId(), 
+      id).subscribe(response => console.log(response));
+    
+    console.log(this.customers);
+  }
+
+  RejectFun(event: Event, id){
+    this.customers = this.customers.filter(c=> c.id != id);
+    this.customerService.deleteCustomer(id).subscribe();
   }
 
 }

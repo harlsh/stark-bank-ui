@@ -26,7 +26,17 @@ export class CustomerService {
     console.log(JSON.stringify(this.BRANCH_API_URL + id + "/customers"));
     return this.httpClient.post(this.BRANCH_API_URL + id + "/customers/", JSON.stringify(customer), httpOptions)
   }
-
+  getCustomer(id:string):Observable<Customer>{
+    console.log(this.CUSTOMER_API_URL + id);
+    return this.httpClient.get<Customer>(this.CUSTOMER_API_URL + id);
+  }
+  editCustomer(id:string, customer:Customer){
+    console.log(JSON.stringify(customer,null,'\t'));
+    return this.httpClient.put<Customer>(this.CUSTOMER_API_URL + id, JSON.stringify(customer), httpOptions)
+  }
+  loginCustomer(loginData:any):Observable<any>{
+    return this.httpClient.post(this.CUSTOMER_API_URL + "login/", JSON.stringify(loginData), httpOptions);
+  }
   listBranches():Observable<any[]>{
     return this.httpClient.get<any[]>(this.BRANCH_API_URL);
   }
@@ -39,8 +49,18 @@ export class CustomerService {
     return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
   }
 
-  createCustomerLogin(branchId, bankUserId, customerId){
-    console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId)
-    this.httpClient.post(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId, JSON.stringify({}), httpOptions)
+  getBankUserCustomers(branchId:any, bankUserId:any):Observable<any[]>{
+    console.log(this.BRANCH_API_URL + branchId + "/bankusers/" + bankUserId + "/customerlist/");
+    return this.httpClient.get<any[]>(this.BRANCH_API_URL + branchId + "/bankusers/" + bankUserId + "/customerlist/");
   }
+  createCustomerLogin(branchId, bankUserId, customerId):Observable<any>{
+    console.log(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId);
+    return this.httpClient.post(this.BRANCH_API_URL + branchId + "/bankusers/"+ bankUserId + "/createLogin/" + customerId, JSON.stringify({}), httpOptions)
+  }
+
+  deleteCustomer(customerId):Observable<any>{
+    return this.httpClient.delete(this.CUSTOMER_API_URL + customerId)
+  }
+
+ 
 }
