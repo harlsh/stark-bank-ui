@@ -7,6 +7,7 @@ import { Customer } from './Customer';
 export class DashboardServiceService {
 
   private customer: string;
+  private accountId:any;
   constructor() { }
 
   getCustomer(){
@@ -14,5 +15,11 @@ export class DashboardServiceService {
   }
   setCustomer(customer:string){
     this.customer = customer;
+  }
+  setAccountId(accountId:any){
+    this.accountId=accountId;
+  }
+  getAccountId(){
+    return this.accountId;
   }
 }

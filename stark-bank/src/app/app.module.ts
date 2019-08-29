@@ -28,6 +28,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NameFormatterPipe } from './name-formatter.pipe';
 import { BranchFormatterPipe } from './branch-formatter.pipe';
+import { UserIdleModule } from 'angular-user-idle';
 
 
 @NgModule({
@@ -59,6 +60,8 @@ import { BranchFormatterPipe } from './branch-formatter.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    UserIdleModule.forRoot({idle: 180, timeout: 60, ping: 30}), 
+
     RouterModule.forRoot([
       {
         path: '',

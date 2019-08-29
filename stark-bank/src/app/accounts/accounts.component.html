@@ -10,23 +10,17 @@
   <br>
 <div class="row">
         <div class="card col-md-5" *ngFor="let account of accounts" >
-          <div class="card-header">
-                         {{account.id}}
-        </div>
+          <div class="card-header text-center">
+            AccountNumber:{{account.accountNumber}} </div>
         <div class="card-body">
 
-
+        <!-- <p class="card-text">Account ID:{{account.id}}</p> -->
         <p class="card-text">Account Name: {{account.accountName}}</p>
 
-
-        <p class="card-text">Account Number:{{account.accountNumber}}</p>
-
-
-
-          <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
+        <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
           <p>Balance:  <b>{{account.balance}}</b></p>
         </div>
+        <button class="btn btn-success" (onclick)="useAccount($event, account.id)">Use this Account</button>
         </div>
         </div>
-
 </div>

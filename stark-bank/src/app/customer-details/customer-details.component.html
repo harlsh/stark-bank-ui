@@ -46,8 +46,11 @@
                             <div class="col-md-6">
                                 <label>Name</label>
                             </div>
-                            <div class="col-md-6">
-                                <input value="{{ customer.firstName }} {{ customer.lastName}}" [disabled]='isDisabled'>
+                            <div class="col-md-3">
+                                <input name="firstName" value="{{ customer.firstName }}" [disabled]='isDisabled'>
+                            </div>
+                            <div class="col-md-3">
+                                <input name="lastName" value="{{ customer.lastName }}" [disabled]='isDisabled'>
                             </div>
                         </div>
                         <div class="row">

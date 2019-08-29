@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { BankUser } from './BankUser';
+import { Account } from './Account';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -61,6 +62,13 @@ export class CustomerService {
   deleteCustomer(customerId):Observable<any>{
     return this.httpClient.delete(this.CUSTOMER_API_URL + customerId)
   }
-
+  //accounts
+  getAccounts(customerId:any):Observable<any>{
+    console.log(this.CUSTOMER_API_URL+customerId+"/accounts/");
+    return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+customerId+"/accounts/");
+  }
+  postAccounts(customerId:any,account:Account):Observable<any>{
+    return this.httpClient.post(this.CUSTOMER_API_URL+ customerId +'/accounts',JSON.stringify(account), httpOptions);
+  }
  
 }
