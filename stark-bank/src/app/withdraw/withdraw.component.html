@@ -4,7 +4,7 @@
 
     <div class="col-md-12">
 
-      <form>
+      <form ngForm #form="ngForm" (ngSubmit)="withdrawAmount(form)">
         <h1><span class="text-center">Withdraw Amount </span></h1>
         <br>
         <div id="contact-form" class="form-container" data-form-container>
@@ -19,12 +19,12 @@
           <div class="row">
               <span class="req-input">
                 <span class="input-status" data-toggle="tooltip" data-placement="top" title="Enter Amount"> </span>
-                <input type="text" placeholder="Amount">
+                <input type="text" ngModel placeholder="Amount" name="amount">
               </span>
           </div>
 
           <div class="row submit-row">
-            <button type="button" class="btn btn-block submit-form" (click)="send()">Submit</button>
+            <button type="submit" class="btn btn-block submit-form">Submit</button>
           </div>
         </div>
 

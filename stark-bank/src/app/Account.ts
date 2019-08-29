@@ -5,7 +5,7 @@ export class Account{
         // private id:any,
         private accountName:string,
         private accountNumber:any,
-        private balance:number,
+        private balance:any,
         // private branch_id:number,
         // private customer_id:number
     ){}
@@ -20,7 +20,7 @@ export class Account{
     get _accountNumber():number{
         return this.accountNumber;
     }
-    get _balance():number{
+    get _balance():any{
         return this.balance;
     }
     // get branch_id_():number{

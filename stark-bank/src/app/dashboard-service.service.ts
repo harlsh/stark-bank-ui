@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Customer } from './Customer';
+import {Account} from './Account';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardServiceService {
 
-  private customer: string;
-  private accountId:any;
+  private customerID: string;
+  private account:Account;
   constructor() { }
 
   getCustomer(){
-    return this.customer;
+    return this.customerID;
   }
   setCustomer(customer:string){
-    this.customer = customer;
+    this.customerID = customer;
   }
-  setAccountId(accountId:any){
-    this.accountId=accountId;
+
+  setAccount(account:Account){
+    this.account=account;
   }
-  getAccountId(){
-    return this.accountId;
+  getAccount(){
+    return this.account;
   }
 }

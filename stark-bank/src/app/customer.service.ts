@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { BankUser } from './BankUser';
 import { Account } from './Account';
+import { Transaction } from './Transaction';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -48,6 +49,11 @@ export class CustomerService {
   
   getCustomerTransactions(id:any, aid:any):Observable<any[]>{
     return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
+  }
+
+  postTransaction(id:any, aid:any, transaction:Transaction):Observable<any>{
+    console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw');
+    return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw',JSON.stringify(transaction), httpOptions);
   }
 
   getBankUserCustomers(branchId:any, bankUserId:any):Observable<any[]>{

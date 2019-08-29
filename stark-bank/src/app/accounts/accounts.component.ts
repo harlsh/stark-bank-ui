@@ -13,7 +13,7 @@ export class AccountsComponent implements OnInit {
   accounts:Account[]=[];
   
 
-//   accountss=[{
+//   accounts=[{
 //     id:1,
 //     accountNumber:101,
 //     accountName:"Harish Reddy",
@@ -36,10 +36,10 @@ export class AccountsComponent implements OnInit {
     this.customerService.getAccounts(id).subscribe(response=>this.accounts=response);
   }
 
-  useAccount(event: Event, aid){
-    console.log("Hello useAccount");
-    // console.log("AccoountId is set:"+this.dashboardService.setAccountId(aid));
-    this.dashboardService.setAccountId(aid);
+  AcceptFun(event: Event,account){
+    this.dashboardService.setAccount(account)
+    console.log("Accoount is:");
+    console.log(this.dashboardService.getAccount());
   }
 
 }

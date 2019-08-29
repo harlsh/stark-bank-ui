@@ -20,7 +20,7 @@
         <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
           <p>Balance:  <b>{{account.balance}}</b></p>
         </div>
-        <button class="btn btn-success" (onclick)="useAccount($event, account.id)">Use this Account</button>
+        <button type="button" class="btn btn-success " (click)="AcceptFun($event, account)" name="useAccountButton">Accept</button>
         </div>
         </div>
 </div>

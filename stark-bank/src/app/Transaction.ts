@@ -3,29 +3,29 @@ import { logging } from 'protractor';
 export class Transaction{
     constructor(
         //  private id:any ,
-         private account_balance:any,
-         private transaction_amount:any, 
-         private transaction_time:any, 
-         private credited_account:any, 
-         private debited_account:any)
+         private accountBalance:any,
+         private transactionAmount:any, 
+         private transactionTime:any, 
+         private creditedAccount:any, 
+         private debitedAccount:any)
          {}
     // get _id(){
     //     return this.id;
     // }
     
-    get _account_balance(){
-        return this.account_balance;
+    get _accountBalance(){
+        return this.accountBalance;
     }
-    get _transaction_amount(){
-        return this.transaction_amount;
+    get _transactionAmount(){
+        return this.transactionAmount;
     }
-    get _transaction_time(){
-        return this.transaction_time;
+    get _transactionTime(){
+        return this.transactionTime;
     }
-    get _credited_account(){
-        return this.credited_account;
+    get _creditedAccount(){
+        return this.creditedAccount;
     }
-    get _debited_account(){
-        return this.debited_account;
+    get _debitedAccount(){
+        return this.debitedAccount;
     }
 }
