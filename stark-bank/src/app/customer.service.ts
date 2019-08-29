@@ -47,13 +47,18 @@ export class CustomerService {
     return this.httpClient.post(this.BRANCH_API_URL + id + "/bankusers/login", JSON.stringify(bankUser), httpOptions)
   }
   
+  //Transactions
   getCustomerTransactions(id:any, aid:any):Observable<any[]>{
     return this.httpClient.get<any[]>(this.CUSTOMER_API_URL+id+"/accounts/"+aid+"/transactions");
   }
 
-  postTransaction(id:any, aid:any, transaction:Transaction):Observable<any>{
+  postTransactionWithdraw(id:any, aid:any, transaction:Transaction):Observable<any>{
     console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw');
     return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw',JSON.stringify(transaction), httpOptions);
+  }
+  postTransactionDeposit(id:any, aid:any, transaction:Transaction):Observable<any>{
+    console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw');
+    return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/deposit',JSON.stringify(transaction), httpOptions);
   }
 
   getBankUserCustomers(branchId:any, bankUserId:any):Observable<any[]>{

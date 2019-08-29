@@ -25,7 +25,7 @@ export class WithdrawComponent implements OnInit {
     //post this transaction 
     console.log("Transaction:");
     console.log(transaction);
-    this.customerService.postTransaction(this.dashboardService.getCustomer(),this.account.id,transaction)
+    this.customerService.postTransactionWithdraw(this.dashboardService.getCustomer(),this.account.id,transaction)
     .subscribe(response=>console.log(response));
 
   }
