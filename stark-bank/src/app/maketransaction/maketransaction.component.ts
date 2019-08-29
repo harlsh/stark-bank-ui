@@ -30,12 +30,12 @@ makeTransaction(form){
   let daccount=this.dashboardService.getAccount();
   // let caccount=this.customerService.getAccounts();
 
-  let transaction=new Transaction(this.account.balance,form.value.amount,new Date(),,);
-  //post this transaction 
-  console.log("Transaction:");
-  console.log(transaction);
-  this.customerService.postTransactionDeposit(this.dashboardService.getCustomer(),this.account.id,transaction)
-  .subscribe(response=>console.log(response));
+  // let transaction=new Transaction(this.account.balance,form.value.amount,new Date(),,);
+  // post this transaction 
+  // console.log("Transaction:");
+  // console.log(transaction);
+  // this.customerService.postTransactionDeposit(this.dashboardService.getCustomer(),this.account.id,transaction)
+  // .subscribe(response=>console.log(response));
 
 }
 

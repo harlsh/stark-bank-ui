@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../Customer';
 import { Account } from '../Account';
+import { DashboardServiceService } from '../dashboard-service.service';
 
 @Component({
   selector: 'app-transactions',
@@ -20,14 +21,22 @@ export class TransactionsComponent implements OnInit {
 
   private subscription:Subscription;
 
-  constructor(private customerService:CustomerService,private router:Router){  }
+  constructor(private customerService:CustomerService,
+    private router:Router,
+    private dashboardService:DashboardServiceService){  }
 
+   id:any;
+   acc:any[]=[];
   ngOnInit() {
+    let id=this.dashboardService.getCustomer();
+    let acc=this.dashboardService.getAccount();
     this.subscription = this.customerService
-    .getCustomerTransactions(1,1)           //Edit arguments as CustomerId and AccountID
+    .getCustomerTransactions(id,acc.id)           //Edit arguments as CustomerId and AccountID
     .subscribe(response => {
-      this. transactions= response;
-     })
+      this.transactions= response;
+      console.log(this.transactions);
+     });
+     
   }
 
   // attributes = ["ID","TRANSACTIONAMOUNT","DEBITEDACCOUNT","CREDITEDACCOUNT"];

@@ -29,10 +29,10 @@
       <tbody>
       <tr *ngFor="let transaction of transactions">
         <th scope="row">{{transaction.id}}</th>
-        <td>{{transaction.transaction_amount  | currency:'INR':true:'4.2-2'}}</td>
-        <td>{{transaction.transaction_time}}</td>
-        <td>{{transaction.credited_account}}</td>
-        <td>{{transaction.debited_account}}</td>
+        <td>{{transaction.transactionAmount  | currency:'INR':true:'4.2-2'}}</td>
+        <td>{{transaction.transactionTime}}</td>
+        <td>{{transaction.creditedAccount.accountNumber}}</td>
+        <td>{{transaction.debitedAccount.accountNumber}}</td>
       </tr>
 
       </tbody>

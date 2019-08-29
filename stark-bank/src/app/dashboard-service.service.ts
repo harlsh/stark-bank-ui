@@ -8,7 +8,7 @@ import {Account} from './Account';
 export class DashboardServiceService {
 
   private customerID: string;
-  private account:Account;
+  private account:any;
   constructor() { }
 
   getCustomer(){
