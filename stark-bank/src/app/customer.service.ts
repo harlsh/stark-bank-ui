@@ -57,8 +57,13 @@ export class CustomerService {
     return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw',JSON.stringify(transaction), httpOptions);
   }
   postTransactionDeposit(id:any, aid:any, transaction:Transaction):Observable<any>{
-    console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/withdraw');
+    console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/deposit');
     return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/deposit',JSON.stringify(transaction), httpOptions);
+  }
+
+  postTransactionTransfer(id:any, aid:any, transaction:Transaction):Observable<any>{
+    console.log(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/transfer');
+    return this.httpClient.post(this.CUSTOMER_API_URL+id+'/accounts/'+aid+'/transactions/transfer',JSON.stringify(transaction), httpOptions);
   }
 
   getBankUserCustomers(branchId:any, bankUserId:any):Observable<any[]>{
@@ -80,6 +85,11 @@ export class CustomerService {
   }
   postAccounts(customerId:any,account:Account):Observable<any>{
     return this.httpClient.post(this.CUSTOMER_API_URL+ customerId +'/accounts',JSON.stringify(account), httpOptions);
+  }
+
+  getAccountByAccountNumber(customerId:any, accountNumber:any):Observable<any>{
+    console.log(this.CUSTOMER_API_URL + customerId + "/accounts/" + accountNumber + "/account");
+    return this.httpClient.get<any>(this.CUSTOMER_API_URL + customerId + "/accounts/" + accountNumber + "/account");
   }
  
 }

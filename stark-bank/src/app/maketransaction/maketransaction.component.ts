@@ -27,14 +27,22 @@ send()
 // This  function needed to be edited 
 makeTransaction(form){
   console.log("in Make Transaction");
-  let daccount=this.dashboardService.getAccount();
-  // let caccount=this.customerService.getAccounts();
+  
+  let debitaccount=this.dashboardService.getAccount();
+  let creditaccount=this.customerService.getAccountByAccountNumber(this.dashboardService.getCustomer() , form.value.creditAccountNumber)
+  .subscribe(response=>{
+    let creditAccount = response;
+    let transaction=new Transaction(debitaccount.balance,form.value.amount,new Date(),creditAccount,debitaccount);
+    console.log(transaction);
+    this.customerService.postTransactionTransfer(this.dashboardService.getCustomer(),debitaccount.id,transaction)
+  });
+  
 
-  // let transaction=new Transaction(this.account.balance,form.value.amount,new Date(),,);
+  
   // post this transaction 
   // console.log("Transaction:");
   // console.log(transaction);
-  // this.customerService.postTransactionDeposit(this.dashboardService.getCustomer(),this.account.id,transaction)
+  // 
   // .subscribe(response=>console.log(response));
 
 }

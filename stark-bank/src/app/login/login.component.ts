@@ -20,7 +20,12 @@ handleFormData(form)
   this.customerService.loginCustomer({userId: form.value.userId, password: form.value.password}).subscribe(response => {
     this.dashboardService.setCustomer(response.id);
     console.log(response.id);
-    this.router.navigate(["customer-dashboard"]);});
+    if(response.login)
+    this.router.navigate(["customer-dashboard"]);
+    else
+    alert("Customer not Authorized");
+  });
+    
   
 }
   register()

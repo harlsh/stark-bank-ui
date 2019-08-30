@@ -14,13 +14,13 @@
             AccountNumber:{{account.accountNumber}} </div>
         <div class="card-body">
 
-        <!-- <p class="card-text">Account ID:{{account.id}}</p> -->
+        <p class="card-text">Account ID:{{account.id}}</p>
         <p class="card-text">Account Name: {{account.accountName}}</p>
 
         <!-- <a [routerLink]="['/customer-dashboard']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-left"></i></a> -->
           <p>Balance:  <b>{{account.balance}}</b></p>
         </div>
-        <button type="button" class="btn btn-success " (click)="AcceptFun($event,account)" name="useAccountButton">Accept</button>
+        <button type="button" class="btn btn-success " (click)="AcceptFun($event,account)" name="useAccountButton">Use this Account</button>
         </div>
         </div>
 </div>
